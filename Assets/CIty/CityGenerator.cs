@@ -25,6 +25,7 @@ public class CityGenerator : MonoBehaviour {
 
     private void CreateCity(Vector3 position) {
         GameObject city = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+
         city.transform.position = position;
         city.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         city.GetComponent<Renderer>().material = cityMaterial;
