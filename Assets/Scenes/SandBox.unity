@@ -163,12 +163,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 253529152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b77e1769986be49ab2ac26a175e89a, type: 3}
+  m_Script: {fileID: 11500000, guid: 23ec509b9e8f63b48a6df5ef7b1e1ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 253529152}
   material: {fileID: 2100000, guid: 74f286b122c6ab24faea4472d2a0d2e3, type: 2}
   numberOfCities: 4
+  cityPositions: []
 --- !u!1 &383035439
 GameObject:
   m_ObjectHideFlags: 0
