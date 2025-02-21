@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CityGenerator : MonoBehaviour {
+public class CityGenerator : MonoBehaviour{
+
     [SerializeField] private GameObject parent; 
     [SerializeField] private Material cityMaterial;
-    [SerializeField] private int numberOfCities = 1;
+    [SerializeField] public int numberOfCities = 1;
     private float xBound = 8.5f; 
     private float yBound = 4.5f; 
     private List<Vector3> cityPositions = new List<Vector3>();  
@@ -25,7 +26,6 @@ public class CityGenerator : MonoBehaviour {
 
     private void CreateCity(Vector3 position) {
         GameObject city = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-
         city.transform.position = position;
         city.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         city.GetComponent<Renderer>().material = cityMaterial;
