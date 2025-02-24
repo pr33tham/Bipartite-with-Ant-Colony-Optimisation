@@ -2,22 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-public class AntManager : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-=======
-=======
->>>>>>> Stashed changes
 public class AntManager : MonoBehaviour {
 
     [SerializeField] GameObject antPrefab;
@@ -36,10 +20,6 @@ public class AntManager : MonoBehaviour {
     }
 
     private void Update() {
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         
     }
 }
