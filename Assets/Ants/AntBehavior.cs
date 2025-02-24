@@ -6,8 +6,12 @@ public class AntBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     void Start()
     {
+=======
+    void Start() {
+>>>>>>> Stashed changes
 =======
     void Start() {
 >>>>>>> Stashed changes
@@ -16,8 +20,12 @@ public class AntBehavior : MonoBehaviour
 
     // Update is called once per frame
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     void Update()
     {
+=======
+    void Update() {
+>>>>>>> Stashed changes
 =======
     void Update() {
 >>>>>>> Stashed changes
