@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 public class CityGenerator : MonoBehaviour
 {
     [SerializeField] public int noOfCities = 1;
@@ -13,6 +14,7 @@ public class CityGenerator : MonoBehaviour
 
     private float xBounds = 8.5f;
     private float yBounds = 4.5f;
+
     // Start is called before the first frame update
     void Start() {
         for(int i = 0; i < noOfCities; i++) {
@@ -20,6 +22,7 @@ public class CityGenerator : MonoBehaviour
             cityPoistions.Add(cityPos);
             GenerateCity(cityPos);
         }
+
     }
 
     private void GenerateCity(Vector3 position) {

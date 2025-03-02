@@ -20,6 +20,6 @@ public class AntManager : MonoBehaviour {
     }
 
     private void Update() {
-        
+
     }
 }
