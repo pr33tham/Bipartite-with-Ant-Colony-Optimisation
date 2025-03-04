@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AntManager : MonoBehaviour {
+public class SpawnColony
+    : MonoBehaviour {
 
     [SerializeField] GameObject antPrefab;
     [SerializeField] GameObject Parent;
