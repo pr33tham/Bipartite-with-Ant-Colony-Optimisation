@@ -9,25 +9,23 @@ public class CityGenerator : MonoBehaviour
 {
     [SerializeField] public int noOfCities = 1;
     [SerializeField] GameObject cityPrefab;
-    [SerializeField] GameObject Parent;
-    public List<Vector3> cityPoistions;
+    [SerializeField] GameObject parent;
 
     private float xBounds = 8.5f;
     private float yBounds = 4.5f;
 
+    public Graph<GameObject> graph;
+
     // Start is called before the first frame update
     void Start() {
-        for(int i = 0; i < noOfCities; i++) {
+        graph = new Graph<GameObject>(noOfCities);
+        for (int i = 0; i < noOfCities; i++) {
             Vector3 cityPos = GenerateRandomCityPositions();
-            cityPoistions.Add(cityPos);
-            GenerateCity(cityPos);
+
+            GameObject newObj = Instantiate(cityPrefab, cityPos, Quaternion.identity, parent.transform);
+
+            graph.AddNode(newObj);
         }
-
-    }
-
-    private void GenerateCity(Vector3 position) {
-        GameObject city = Instantiate(cityPrefab, position, Quaternion.identity);
-        city.transform.SetParent(Parent.transform);
     }
 
     private Vector3 GenerateRandomCityPositions() {
