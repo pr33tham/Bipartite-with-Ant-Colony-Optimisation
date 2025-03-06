@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ant : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start() {
-        
-    }
+public class Ant : MonoBehaviour {
+    //public enum State {
+    //    SearchingFood,
+    //}
 
-    // Update is called once per frame
-    void Update() {
-        
-    }
+
+    //private void Start() {
+
+    //}
+
+    //private float Desirability() {
+
+    //}
+
+    //private void DepositPheramone() {
+
+    //}
 }
