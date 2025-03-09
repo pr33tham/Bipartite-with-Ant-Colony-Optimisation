@@ -8,6 +8,7 @@ public class Graph<Type> {
 
     List<LinkedList<Type>> adj_list;
     bool isDirected;
+    public int currentListSize = 0;
     public Graph(int noOfCities, bool directed = false) {
         adj_list = new List<LinkedList<Type>>(noOfCities);
         isDirected = directed;
@@ -18,41 +19,48 @@ public class Graph<Type> {
     }
 
     public void AddNode(Type node) {
-        foreach (var list in adj_list) {
-            if (list.Contains(node)) {
-                Debug.Log("Node already exists");
+        for (int i = 0; i < currentListSize; i++) {
+            if (adj_list[i].First.Value.Equals(node)) {
+                Debug.Log("Node already exits.");
                 return;
             }
         }
 
-        LinkedList<Type> newNode = new LinkedList<Type>();
-        newNode.AddFirst(node);
-        adj_list.Add(newNode);
-
-
-
+        adj_list[currentListSize].AddFirst(node);
+        currentListSize++;
     }
 
-    public void AddEdge(Type firstNode, Type SecondNode) {
-
-        for(int i = 0; i < adj_list.Count; i++) {
-            if (adj_list[i].First.Equals(firstNode)) {
-                adj_list[i].AddLast(SecondNode);
+    public void AddEdge(Type firstNode, Type secondNode) {
+        for (int i = 0; i < currentListSize; i++) {
+            LinkedList<Type> currentList = adj_list[i];
+            if (currentList.First.Value.Equals(firstNode)) {
+                currentList.AddLast(secondNode);
             }
         }
         if (!isDirected) {
-            for (int i = 0; i < adj_list.Count; i++) {
-                if (adj_list[i].First.Equals(SecondNode)) {
-                    adj_list[i].AddLast(firstNode);
+            for (int i = 0; i < currentListSize; i++) {
+                LinkedList<Type> currentList = adj_list[i];
+                if (currentList.First.Value.Equals(secondNode)) {
+                    currentList.AddLast(firstNode);
                 }
             }
         }
     }
 
+    public override string ToString() {
+        string allConnections = "";
+        for(int i = 0; i < currentListSize; i++) {
+            string connections = "";
+            LinkedList<Type> currentLList = adj_list[i];
+            connections += currentLList.First.Value;
+            LinkedListNode<Type> nextNode = currentLList.First.Next;
+            while (nextNode != null) {
+                connections += " -> " + nextNode.Value;
+                nextNode = nextNode.Next;
+            }
 
-
-
-
-
-
+            allConnections += connections + "\n";
+        }
+        return allConnections;
+    }
 }
