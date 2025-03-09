@@ -7,7 +7,6 @@ using UnityEngine;
 public class Graph<Type> {
 
     List<LinkedList<Type>> adj_list;
-    LinkedList<Type> test;
     bool isDirected;
     public Graph(int noOfCities, bool directed = false) {
         adj_list = new List<LinkedList<Type>>(noOfCities);
@@ -19,7 +18,6 @@ public class Graph<Type> {
     }
 
     public void AddNode(Type node) {
-
         foreach (var list in adj_list) {
             if (list.Contains(node)) {
                 Debug.Log("Node already exists");
@@ -30,6 +28,9 @@ public class Graph<Type> {
         LinkedList<Type> newNode = new LinkedList<Type>();
         newNode.AddFirst(node);
         adj_list.Add(newNode);
+
+
+
     }
 
     public void AddEdge(Type firstNode, Type SecondNode) {
@@ -47,4 +48,11 @@ public class Graph<Type> {
             }
         }
     }
+
+
+
+
+
+
+
 }
