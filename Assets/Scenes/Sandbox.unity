@@ -420,9 +420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4026ffa0c86321f49806fc13db16d5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noOfCities: 20
+  noOfCities: 8
   cityPrefab: {fileID: 5875616657153269792, guid: e5dbd39881c642647ada8767ff18701a, type: 3}
-  parent: {fileID: 1916674850}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
