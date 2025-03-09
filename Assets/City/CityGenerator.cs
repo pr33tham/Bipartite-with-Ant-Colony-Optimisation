@@ -1,20 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
 public class CityGenerator : MonoBehaviour {
-    public int noOfCities = 8;
-    public Graph<City> graph;
 
+    public int noOfCities = 8;
     public GameObject cityPrefab;
+    public Transform cityHolder;
+
+    [DoNotSerialize] 
+    public Graph<City> graph;
 
     private float xBounds = 8.5f;
     private float yBounds = 4.5f;
-
-
-
 
     // Start is called before the first frame update
     void Start() {
@@ -25,7 +26,7 @@ public class CityGenerator : MonoBehaviour {
 
     public void GenerateBipartiteGraph() {
         int setSize = noOfCities / 2; // Divide into two sets
-
+      
         List<City> XCities = new List<City>(); //
         List<City> YCities = new List<City>();
 
@@ -35,6 +36,8 @@ public class CityGenerator : MonoBehaviour {
             City city = new City("X" + (i+1), pos);
             XCities.Add(city);
             graph.AddNode(city);
+            GameObject xCity = Instantiate(cityPrefab, pos, Quaternion.identity, cityHolder);
+            xCity.GetComponent<SpriteRenderer>().color = Color.red;
         }
 
         // Generate cities for set Y (e.g., right side)
@@ -43,7 +46,11 @@ public class CityGenerator : MonoBehaviour {
             City city = new City("Y" + (i+1), pos);
             YCities.Add(city);
             graph.AddNode(city);
+            Instantiate(cityPrefab, pos, Quaternion.identity, cityHolder);
+            GameObject yCity = Instantiate(cityPrefab, pos, Quaternion.identity, cityHolder);
+            yCity.GetComponent<SpriteRenderer>().color = Color.blue;
         }
+
         graph.AddEdge(XCities[0], YCities[0]);    //X1 -> Y1
         graph.AddEdge(XCities[0], YCities[1]);    //X1 -> Y2
         graph.AddEdge(XCities[0], YCities[3]);    //X1 -> Y4
@@ -66,5 +73,5 @@ public class CityGenerator : MonoBehaviour {
         float yPos = UnityEngine.Random.Range(-yBounds, yBounds);
         Vector3 cityPos = new Vector3(xPos, yPos, 0);
         return cityPos;
-    }
+    } 
 }
