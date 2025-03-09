@@ -418,6 +418,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &314816927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 314816928}
+  m_Layer: 0
+  m_Name: EdgeHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &314816928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314816927}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1916674851}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +541,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &841774888
+=======
+--- !u!1 &1479778514
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -518,6 +553,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 841774892}
   - component: {fileID: 841774891}
   - component: {fileID: 841774890}
@@ -624,24 +660,38 @@ GameObject:
   - component: {fileID: 1080360635}
   m_Layer: 0
   m_Name: AntGenerator
+=======
+  - component: {fileID: 1479778515}
+  m_Layer: 0
+  m_Name: CityHolder
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &1080360634
+=======
+--- !u!4 &1479778515
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1080360633}
+=======
+  m_GameObject: {fileID: 1479778514}
+>>>>>>> Stashed changes
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1080360635
@@ -659,6 +709,10 @@ MonoBehaviour:
   antPrefab: {fileID: 1653792020217573048, guid: db5bece999fb4a64e885184097d774b9, type: 3}
   Parent: {fileID: 1080360633}
   cityGenerator: {fileID: 1916674850}
+=======
+  m_Father: {fileID: 1916674851}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1916674850
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +742,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1479778515}
+  - {fileID: 314816928}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1916674852
@@ -703,6 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4026ffa0c86321f49806fc13db16d5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   noOfCities: 4
   cityPrefab: {fileID: 87213039458382172, guid: e5dbd39881c642647ada8767ff18701a, type: 3}
   Parent: {fileID: 1916674850}
@@ -897,14 +954,26 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db5bece999fb4a64e885184097d774b9, type: 3}
+=======
+  noOfCities: 8
+  cityPrefab: {fileID: 1211762073184369241, guid: cee6658280ceaf64ebcfacb05917f7e2, type: 3}
+  cityHolder: {fileID: 1479778515}
+  edgeHolders: {fileID: 314816928}
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+<<<<<<< Updated upstream
   - {fileID: 1916674851}
   - {fileID: 1080360634}
   - {fileID: 285075580}
   - {fileID: 147580425}
   - {fileID: 841774892}
   - {fileID: 8025211632836423755}
+=======
+  - {fileID: 285075580}
+  - {fileID: 147580425}
+  - {fileID: 1916674851}
+>>>>>>> Stashed changes
