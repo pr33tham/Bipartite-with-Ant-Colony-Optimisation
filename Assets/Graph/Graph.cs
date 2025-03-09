@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Graph<Type> {
 
-    List<LinkedList<Type>> adj_list;
+    public List<LinkedList<Type>> adj_list;
     bool isDirected;
     public int currentListSize = 0;
     public Graph(int noOfCities, bool directed = false) {
