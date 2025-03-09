@@ -54,6 +54,7 @@ public class CityGenerator : MonoBehaviour {
             YCities.Add(city);
             graph.AddNode(city);
             Instantiate(cityPrefab, pos, Quaternion.identity, cityHolder);
+<<<<<<< HEAD
             InstantiateCity(city.name, pos, Color.blue);
 
         }
@@ -78,6 +79,13 @@ public class CityGenerator : MonoBehaviour {
 
     }
 
+=======
+            GameObject yCity = Instantiate(cityPrefab, pos, Quaternion.identity, cityHolder);
+            yCity.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+    }
+
+>>>>>>> 3bd546bee7e220f4731d1dd38d5953976be7bb83
     private void AddEdges() {
         graph.AddEdge(XCities[0], YCities[0]);    //X1 -> Y1
         graph.AddEdge(XCities[0], YCities[1]);    //X1 -> Y2
@@ -121,8 +129,11 @@ public class CityGenerator : MonoBehaviour {
 
                 lineRenderer.SetPosition(0, Head.position);
                 lineRenderer.SetPosition(1, nextCity.position);
+<<<<<<< HEAD
 
                 nextNode = nextNode.Next;
+=======
+>>>>>>> 3bd546bee7e220f4731d1dd38d5953976be7bb83
             }
         }
     }
