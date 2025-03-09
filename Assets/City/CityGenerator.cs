@@ -53,8 +53,6 @@ public class CityGenerator : MonoBehaviour {
             City city = new City("Y" + (i + 1), "Y", pos);
             YCities.Add(city);
             graph.AddNode(city);
-            Instantiate(cityPrefab, pos, Quaternion.identity, cityHolder);
-<<<<<<< HEAD
             InstantiateCity(city.name, pos, Color.blue);
 
         }
@@ -65,8 +63,8 @@ public class CityGenerator : MonoBehaviour {
         city.GetComponent<SpriteRenderer>().color = color;
 
         GameObject cityNameText = new GameObject("CityNameText");
-        cityNameText.transform.SetParent(city.transform); 
-        cityNameText.transform.localPosition = new Vector3(0, 1, 0); 
+        cityNameText.transform.SetParent(city.transform);
+        cityNameText.transform.localPosition = new Vector3(0, 1, 0);
 
         TextMeshPro textMeshPro = cityNameText.AddComponent<TextMeshPro>();
         textMeshPro.text = name;
@@ -75,17 +73,9 @@ public class CityGenerator : MonoBehaviour {
         textMeshPro.color = Color.white;
         textMeshPro.alignment = TextAlignmentOptions.Center;
 
-        textMeshPro.isTextObjectScaleStatic = true; 
-
+        textMeshPro.isTextObjectScaleStatic = true;
     }
 
-=======
-            GameObject yCity = Instantiate(cityPrefab, pos, Quaternion.identity, cityHolder);
-            yCity.GetComponent<SpriteRenderer>().color = Color.blue;
-        }
-    }
-
->>>>>>> 3bd546bee7e220f4731d1dd38d5953976be7bb83
     private void AddEdges() {
         graph.AddEdge(XCities[0], YCities[0]);    //X1 -> Y1
         graph.AddEdge(XCities[0], YCities[1]);    //X1 -> Y2
@@ -129,11 +119,8 @@ public class CityGenerator : MonoBehaviour {
 
                 lineRenderer.SetPosition(0, Head.position);
                 lineRenderer.SetPosition(1, nextCity.position);
-<<<<<<< HEAD
 
                 nextNode = nextNode.Next;
-=======
->>>>>>> 3bd546bee7e220f4731d1dd38d5953976be7bb83
             }
         }
     }
