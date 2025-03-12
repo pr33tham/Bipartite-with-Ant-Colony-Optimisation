@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ant : MonoBehaviour {
-    //public enum State {
-    //    SearchingFood,
-    //}
+
+    //Only an Agent that moves around cities instead of biological ants
+    //Can implement later
+    public enum State { searchingSetA, searchingSetB };
+    public Transform pheramoneDepositPos;
 
 
-    //private void Start() {
 
-    //}
+    List<City> VisitedCities;
 
-    //private float Desirability() {
+    private void Start() {
 
-    //}
+    }
 
-    //private void DepositPheramone() {
-
-    //}
+    private void Update() {
+        
+    }
 }

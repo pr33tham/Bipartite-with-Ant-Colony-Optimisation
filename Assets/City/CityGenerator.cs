@@ -26,16 +26,17 @@ public class CityGenerator : MonoBehaviour {
 
     //Edge Renderers
     private LineRenderer lineRenderer;
+    [SerializeField] Material lineMaterial;
 
     // Start is called before the first frame update
-    private void Start() {
+    private void Awake() {
         graph = new Graph<City>(noOfCities);
         XCities = new List<City>();
         YCities = new List<City>();
         setSize = noOfCities / 2;
-        GenerateCities();
-        AddEdges();
-        GenerateEdges();
+        GenerateCities(); //random location, handled auto
+        AddEdges(); //updated manually
+        GenerateEdges(); // auto
     }
 
     private void GenerateCities() {
@@ -59,7 +60,8 @@ public class CityGenerator : MonoBehaviour {
     }
 
     private void InstantiateCity(String name, Vector3 pos, Color color) {
-        GameObject city = Instantiate(cityPrefab, pos, Quaternion.identity, cityHolder);
+
+        GameObject city = Instantiate(cityPrefab, pos, Quaternion.identity,  cityHolder);
         city.GetComponent<SpriteRenderer>().color = color;
 
         GameObject cityNameText = new GameObject("CityNameText");
@@ -77,6 +79,8 @@ public class CityGenerator : MonoBehaviour {
     }
 
     private void AddEdges() {
+
+
         graph.AddEdge(XCities[0], YCities[0]);    //X1 -> Y1
         graph.AddEdge(XCities[0], YCities[1]);    //X1 -> Y2
         graph.AddEdge(XCities[0], YCities[3]);    //X1 -> Y4
@@ -92,6 +96,7 @@ public class CityGenerator : MonoBehaviour {
         graph.AddEdge(XCities[3], YCities[0]);    //X4 -> Y1
         graph.AddEdge(XCities[3], YCities[2]);    //X4 -> Y3
         graph.AddEdge(XCities[3], YCities[3]);    //X4 -> Y4
+        Debug.Log(graph);
     }
 
 
@@ -110,9 +115,9 @@ public class CityGenerator : MonoBehaviour {
                 GameObject line = new GameObject("Line");
                 line.transform.SetParent(edgeHolder);
                 lineRenderer = line.AddComponent<LineRenderer>();
-                lineRenderer.startWidth = 0.01f;
-                lineRenderer.endWidth = 0.01f;
-                lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+                lineRenderer.startWidth = 0.03f;
+                lineRenderer.endWidth = 0.03f;
+                lineRenderer.material = lineMaterial;
                 lineRenderer.startColor = Color.white;
                 lineRenderer.endColor = Color.white;
                 lineRenderer.positionCount = 2;
