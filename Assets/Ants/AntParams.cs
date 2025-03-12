@@ -13,11 +13,11 @@ public class AntParams : ScriptableObject {
     public float pheromoneEvaporateTime = 45;
     public float pheromoneRunOutTime = 30;
     public float pheromoneWeight = 1;
-    public float perceptionRadius = 2.5f;
     public bool useFirstMarkers = true;
     public bool useSecondMarkers = true;
 
     [Header("Sensing")]
+    public float perceptionRadius = 2.5f;
     public float sensorSize = 0.75f;
     public float sensorDst = 1.25f;
     public float sensorSpacing = 1;
