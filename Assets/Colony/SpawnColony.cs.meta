@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ba09d081ce34c6646a7d533e52ce1d73
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - settings: {fileID: 11400000, guid: 0d9f8ff261bc44941a4b0a6aeee646fb, type: 2}
+  - antPrefab: {fileID: 402160823636076130, guid: 6521f716eb1dd42a3b8f86938e1183fa, type: 3}
+  - antHolder: {instanceID: 0}
+  - homeMarkers: {instanceID: 0}
+  - foodMarkers: {instanceID: 0}
+  - graphic: {instanceID: 0}
+  - numFoodUI: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
